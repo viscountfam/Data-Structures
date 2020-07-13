@@ -1,4 +1,4 @@
-from linked import Node, linked_list
+from singly_linked_list import Node, linked_list
 
 
 """
@@ -27,3 +27,10 @@ class Stack:
     def pop(self):
         self.storage.pop(-1)
 
+class list_Stack:
+    def __init__(self):
+        self.storage = linked_list()
+    def push(self, value):
+        self.storage.add_to_tail(value)
+    def pop(self):
+        self.storage.remove_tail()
