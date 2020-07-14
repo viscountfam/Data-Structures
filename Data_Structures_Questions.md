@@ -8,12 +8,15 @@ Answer the following questions for each of the data structures you implemented a
 2. What is the runtime complexity of `push` using a linked list?
     In a linked list the push method has a time complexity of O(1) so it is constant
 3. What is the runtime complexity of `pop` using a list?
-    
+    In a list the time complexity of the pop method is O(1) if you are removign the last element
+
 4. What is the runtime complexity of `pop` using a linked list?
+    In a linked list the runtime complexity of pop is O(n) unless you are deleting the head which is O(1)
 
 5. What is the runtime complexity of `len` using a list?
-
+    In a list the runtime complexity of len is O(1)
 6. What is the runtime complexity of `len` using a linked list?
+    in a linked list the runtime complexity of len is O(n)
 
 ## Queue
 
