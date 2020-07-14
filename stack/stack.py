@@ -29,6 +29,8 @@ class Stack:
         else:
             self.size -= 1
             return self.storage.pop(-1)
+    def peek(self):
+        return self.storage[-1]
     
 
 class list_Stack:
@@ -45,3 +47,5 @@ class list_Stack:
             self.size -= 1
     def __len__(self):
         return self.size
+    def peek(self):
+        return self.storage.tail
