@@ -3,11 +3,12 @@ Answer the following questions for each of the data structures you implemented a
 ## Stack
 
 1. What is the runtime complexity of `push` using a list?
+    the push method to a list has a complexity of O(n) so it's linear
 
 2. What is the runtime complexity of `push` using a linked list?
-
+    In a linked list the push method has a time complexity of O(1) so it is constant
 3. What is the runtime complexity of `pop` using a list?
-
+    
 4. What is the runtime complexity of `pop` using a linked list?
 
 5. What is the runtime complexity of `len` using a list?
