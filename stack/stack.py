@@ -27,6 +27,7 @@ class Stack:
         if len(self.storage)== 0:
             return None
         else:
+            self.size -= 1
             return self.storage.pop(-1)
     
 
@@ -37,7 +38,10 @@ class list_Stack:
         self.storage.add_to_tail(value)
         self.size += 1
     def pop(self):
-        self.storage.remove_tail()
-        self.size += 1
+        if self.size == 0:
+            return None
+        else:
+            self.storage.remove_tail()
+            self.size -= 1
     def __len__(self):
         return self.size
