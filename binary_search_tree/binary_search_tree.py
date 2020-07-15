@@ -59,23 +59,21 @@ class BSTNode:
     def get_max(self):
         # forget about the left subtree
         # iterate through the nodes using a loop most likely the while loop
-        # current = self.value
-        # next_node_value = self.right
-        # next_node = self.right
-
-        # while next_node is not None:
-        #     print(current)
-        #     current = next_node_value
-        #     next_node = self.right.right
-        
-        # return current.value
-        maximum = 0
         current = self
-        while current is not None:
-            if current.value > maximum:
-                maximum = current.value
-            current = current.right
-        return maximum
+        next_node = current.right
+
+        while next_node is not None:
+            current = next_node
+            next_node = self.right.right
+        
+        return current.value
+        # maximum = 0
+        # current = self
+        # while current is not None:
+        #     if current.value > maximum:
+        #         maximum = current.value
+        #     current = current.right
+        # return maximum
 
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
