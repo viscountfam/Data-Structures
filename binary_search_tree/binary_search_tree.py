@@ -80,11 +80,11 @@ class BSTNode:
         # we need a function to handle the right using a loop
         # we need an identical function to handle it for the left
         # we need these functions to be called recursively
-        fn(self)
         if self.left:
             self.left.for_each(fn)
         if self.right:
             self.right.for_each(fn)
+        fn(self.value)
 
     # Part 2 -----------------------
 
