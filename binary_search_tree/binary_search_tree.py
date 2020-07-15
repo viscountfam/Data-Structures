@@ -9,6 +9,33 @@ This part of the project comprises two days:
 2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods
    on the BSTNode class.
 """
+
+class Queue:
+    def __init__(self):
+        self.size = 0
+        self.storage = []
+    
+    def __len__(self):
+        return len(self.storage)
+
+    def enqueue(self, value):
+        self.storage.append(value)
+        self.size += 1
+    def dequeue(self):
+        if self.size == 0:
+            return None
+        else:
+            self.size -= 1
+            return  self.storage.pop(0)
+    def is_empty(self):
+        return len(self.storage) == 0
+    def peek(self):
+        if not self.is_empty():
+            return self.storage[-1].value
+    
+    
+        
+
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -90,8 +117,14 @@ class BSTNode:
 
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
-    def in_order_print(self, node):
-        pass
+    def in_order_print(self, node, traversal):
+        traversal = ""
+        if node:
+            traversal = self.in_order_dft(node.left, traversal)
+            traversal += (str(node.value) + ",")
+            traversal = self.in_order_dft(node.right, traversal)
+        return traversal
+
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
@@ -107,9 +140,23 @@ class BSTNode:
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
-    def pre_order_dft(self, node):
-        pass
+    def pre_order_dft(self, node, traversal):
+        traversal = ""
+        if node:
+            traversal += (str(node.value) + ",")
+            traversal = self.pre_order_dft(node.left, traversal)
+            traversal = self.pre_order_dft(node.right, traversal)
+        return traversal
+
+
+
 
     # Print Post-order recursive DFT
-    def post_order_dft(self, node):
-        pass
+    def post_order_dft(self, node, traversal):
+        traversal = ""
+        if node:
+            traversal = self.pre_order_dft(node.left, traversal)
+            traversal = self.pre_order_dft(node.right, traversal)
+            traversal += (str(node.value) + ",")
+        return traversal
+
